@@ -1,0 +1,36 @@
+#text{
+	width: 50%;
+	height: auto;
+	margin: auto;
+	margin-top: 5%;
+	text-align: center;
+	z-index: 1;
+}
+
+.tx{
+	width: 20%;
+	height: 20%;
+	border-radius: 50%;
+}
+.tc{
+	background-image: linear-gradient(to right,#f7acbc,#f8aba6,#f05b72);
+	-webkit-background-clip:text;
+	color: transparent;
+
+}
+body{
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+
+	margin: 0;
+}
+video{  
+        	min-width: 100%;
+        	min-height: 100%; 
+        	width: auto;
+        	height: auto; 
+            position: absolute;  
+            right: 0px;  
+            bottom: 0px;  
+            z-index:-99;
+			-webkit-filter: grayscale(10%);//添加灰度蒙版，如果设定为100%则视频显示为黑白
+ }  

@@ -49,6 +49,15 @@
 					</div>
 				</el-card>
 			</div>
+		
+		</div>
+		<div v-if="isrt==2" style="height: 50%;">
+			<div id="main2" >
+			
+			     <span >{{ obj.output }}</span>
+			     <span class="typed-cursor">|</span>
+			 </div>
+		</div>
 		<div class="waifu">
 		    <div class="waifu-tips"></div>
 		    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
@@ -62,19 +71,11 @@
 		        <span class="fui-cross"></span>
 		    </div>
 		</div>
-		</div>
-		<div v-if="isrt==2" style="height: 50%;">
-			<div id="main2" >
-			
-			     <span >{{ obj.output }}</span>
-			     <span class="typed-cursor">|</span>
-			 </div>
-		</div>
 		 <div class="bm">
 		<h3 >Developed by the SunFlower</h3>
 		</div>
 		<video autoplay loop muted src="./img/2.mp4"></video>
-		
+		</div>
 		
 	</body>
 	<script src="https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.3/easy-typer-min.js"></script>

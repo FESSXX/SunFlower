@@ -1,21 +1,64 @@
 vue = new Vue({
 	el:'#app',
 	data:{
-		imgs:["cs.jpg","gta.jpg","m1.jpg","g2.jpg",
-		"mhw.jpg","sjmr.jpg","mm.jpg","m4.jpg","mnrs.jpg",
-		"rx.jpg","sh2.jpg","apex.jpg","gmjy.jpg","sjmr.jpg",
-		"ylrz.jpg","kz.jpg","tdr.jpg","stpq.jpg","yl.jpg"]
+		items:[
+			{url:'cs.jpg',steamId:'730'},
+			{url:'gta.jpg',steamId:'271590'},
+			{url:'mhw.jpg',steamId:'582010'},
+			{url:'sjmr.jpg',steamId:'703700'},
+			{url:'mm.jpg',steamId:'944020'},
+			{url:'m4.jpg',steamId:'944020'},
+			{url:'mnrs.jpg',steamId:'944020'},
+			{url:'rx.jpg',steamId:'944020'},
+			{url:'sh2.jpg',steamId:'944020'},
+			{url:'apex.jpg',steamId:'944020'},
+			{url:'gmjy.jpg',steamId:'944020'},
+			{url:'ylrz.jpg',steamId:'944020'},
+			{url:'kz.jpg',steamId:'944020'},
+			{url:'tdr.jpg',steamId:'944020'},
+			{url:'stpq.jpg',steamId:'944020'},
+			{url:'yl.jpg',steamId:'944020'},
+			],
+			steamUrl:"http://store.steampowered.com/app/",
+			isrt:'2',
+			obj:{
+				output:'',
+				 isEnd: false,
+				        speed: 80,
+				        singleBack: false,
+				        sleep: 800,
+				        type: 'rollback',
+				        backSpeed: 40,
+				        sentencePause: false
+			}
 	},
+	
 	methods:{
-		gameimgclick(){
-			const h = this.$createElement;
-			        this.$notify({
-			          title: '小提示',
-			          message: 
-			            h('i', { style: "background-color: #74EBD5;background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);-webkit-background-clip:text;color: transparent;font-size: 20px;	"}, '暂未提供内容 ~')
-			         
-			        });
-			      
-		}
+		gameimgclick(steamId){
+			window.open(this.steamUrl+steamId);
+		
+		},
+		onclickTitleimg(){
+			window.open("https://steamcommunity.com/profiles/76561198878347020/");
+		},
+		fetchData() {
+		     fetch('https://v1.hitokoto.cn?c=a&c=b&c=c')
+		       .then(res => {
+		           return res.json()
+		       })
+		       .then(({ hitokoto,from }) => {
+		           this.initTyped(hitokoto+' — —「'+from+'」')
+		           })
+		   },
+		   initTyped(input) {
+		     console.log(input)
+		     const typed = new EasyTyper(this.obj, input,this.init)
+		   },
+		   init(){
+		         this.fetchData()
+		    }
+	},
+	mounted(){
+		this.init();
 	}
 })

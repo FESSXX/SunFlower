@@ -21,9 +21,14 @@
 	<body>
 		
 		<div id ="app">
+			<div id="hd">
+				<el-link type="warning" class="yt" @click="isrt=2">首页</el-link>
+				  <el-link type="primary" class="yt" @click="isrt=1">关于我</el-link>
+			</div>
+			<div v-if="isrt==1">
 			<div id="text">
 				<el-card class="box-card">
-					<img class="tx" src="./img/tx.JPG"/>
+					<img class="tx" src="./img/tx.JPG" @click="onclickTitleimg"/>
 					<h1 class="tc">SunFlower</h1>
 					<h2>
 						<span>LoveのGames:</span>
@@ -36,7 +41,7 @@
 					<h2>简介:<span class="tc">123，321，123，321，123，321</span></h2>
 					<h2 class="bs">My Steam Library Games：</h2>
 					<div class="gd">
-						<a @click="gameimgclick"><img class="gi" v-for="u in imgs" :src="'./img/'+u"/></a>
+						<span v-for="item in items"><a @click="gameimgclick(item.steamId)"><img class="gi"  :src="'./img/'+item.url"/></a></span>
 						
 					</div>
 					<div >
@@ -44,7 +49,6 @@
 					</div>
 				</el-card>
 			</div>
-		</div>
 		<div class="waifu">
 		    <div class="waifu-tips"></div>
 		    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
@@ -58,11 +62,22 @@
 		        <span class="fui-cross"></span>
 		    </div>
 		</div>
-		<h3 class="bm">Developed by the SunFlower</h3>
+		</div>
+		<div v-if="isrt==2" style="height: 50%;">
+			<div id="main2" >
+			
+			     <span >{{ obj.output }}</span>
+			     <span class="typed-cursor">|</span>
+			 </div>
+		</div>
+		 <div class="bm">
+		<h3 >Developed by the SunFlower</h3>
+		</div>
 		<video autoplay loop muted src="./img/2.mp4"></video>
 		
 		
 	</body>
+	<script src="https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.3/easy-typer-min.js"></script>
 	<script src="./js/show.js"></script>
 	<script src="./js/xin.js"></script>
 	<script src="./js/yinghua.js"></script>

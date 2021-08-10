@@ -30,7 +30,8 @@ vue = new Vue({
 				        type: 'rollback',
 				        backSpeed: 40,
 				        sentencePause: false
-			}
+			},
+			pec:0
 	},
 	
 	methods:{
@@ -56,6 +57,11 @@ vue = new Vue({
 		   },
 		   init(){
 		         this.fetchData()
+				 if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+				    this.pec = 1;
+				   } else {
+				     this.pec = 0;
+				   }
 		    },
 			gyw(id){
 				if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {

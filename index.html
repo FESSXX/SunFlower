@@ -21,6 +21,7 @@
 	<body>
 		
 		<div id ="app">
+			<div id="pc" v-if="pec==0">
 			<div id="hd">
 				<el-link type="warning" class="yt" @click="gyw(2)">首页</el-link>
 				  <el-link type="primary" class="yt" @click="gyw(1)">关于我</el-link>
@@ -51,8 +52,8 @@
 			</div>
 		
 		</div>
-		<div v-if="isrt==2" style="height: 50%;">
-			<div id="main2" >
+		<div v-if="isrt==2" style="height: 60%;">
+			<div id="main2">
 			
 			     <span >{{ obj.output }}</span>
 			     <span class="typed-cursor">|</span>
@@ -71,14 +72,28 @@
 		        <span class="fui-cross"></span>
 		    </div>
 		</div>
-		 <div class="bm">
+		<div class="bm">
 		<h3 >Developed by the SunFlower</h3>
 		</div>
+		</div>
+		<div id="mb" v-if="pec==1">
+			<div id="mb2" >
+			
+			     <span >{{ obj.output }}</span>
+			     <span class="typed-cursor">|</span>
+			 </div>
+			 <div class="mbbm">
+			 <h3 >Developed by the SunFlower</h3>
+			 </div>
+		</div>
+		
+		
 		<video autoplay loop muted src="./img/2.mp4"></video>
+		
 		</div>
 		
 	</body>
-	<script src="https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.3/easy-typer-min.js"></script>
+	<script  src="https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.3/easy-typer-min.js"></script>
 	<script src="./js/show.js"></script>
 	<script src="./js/xin.js"></script>
 	<script src="./js/yinghua.js"></script>
